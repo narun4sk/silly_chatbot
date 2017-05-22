@@ -21,13 +21,13 @@ cd silly_chatbot/webui
 
 Please use `@tellme` prefix with all the input.
 
-To see available Bot commads type:
+To see available Bot commads please type:
 
 ```
 @tellme help
 ```
 
-To see available Bots type:
+To see Bot list:
 
 ```
 @tellme list
