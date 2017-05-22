@@ -4,7 +4,6 @@ MAINTAINER Narunas Krasauskas <narun4sk@gmail.com>
 
 ARG app_path=/opt/webui
 
-VOLUME ${app_path}
 COPY ./app ${app_path}
 
 WORKDIR ${app_path}
