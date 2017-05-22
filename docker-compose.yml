@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  webui:
+    image: webui:latest
+    build: ./webui
+    ports:
+      - 8000:8000
+    volumes:
+      - ./webui/app:/opt/webui
+  rtmbot:
+    image: rtmbot:latest
+    build: ./rtmbot
+    volumes:
+      - ./rtmbot/app:/opt/rtmbot
