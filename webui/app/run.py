@@ -8,7 +8,7 @@ from chatterbot import ChatBot
 from console import Command
 
 
-HOST = '127.0.0.1'
+HOST = '0.0.0.0'
 PORT = 8000
 
 
@@ -36,13 +36,12 @@ def static(path):
 # Home page
 @bot_ui.route('/')
 def home():
-    return template('index.html')
+    return template('templates/index.html')
 
 
 # Bot interaction
 @bot_ui.route('/askmeanything/')
 def askmeanything():
-    response.set_cookie('bot', '')
     bot_c = request.get_cookie('bot')
     bot = BOT_DICT.get(bot_c, None)
     cmd = Command(bot=bot, bot_dict=BOT_DICT)
@@ -55,7 +54,8 @@ def askmeanything():
         bot = cmd.bot
         response.set_cookie('bot', bot.name)
         return {'response': '<BOT@{bot}> {answer}'.format(bot=bot.name, answer=bot_response)}
-    else:
+    elif not cmd.bot:
+        response.set_cookie('bot', '')
         return {'response': '<BOT> {answer}'.format(answer=bot_response)}
 
 
