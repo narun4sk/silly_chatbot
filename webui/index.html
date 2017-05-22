@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="@locale">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Silly Chat Bot">
+  <meta name="author" content="Narunas Krasauskas">
+  <title>Fancy to Chat?</title>
+  
+  <link href="static/css/tether.min.css" rel="stylesheet">
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    .row {
+      margin-top: 20px;
+    }
+    textarea {
+      min-width: 100%;
+      resize: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container" id="app">
+
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form action="/question" enctype="multipart/form-data" method="get" @submit.prevent="on_submit">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Say Something..." v-model="usr" :keyup.enter="on_submit">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="submit">Go!</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row" style="">
+      <div class="col-md-8 offset-md-2">
+        <chatarea :messages="msg_log"></chatarea>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="static/js/jquery-3.2.1.min.js"></script>
+  <script src="static/js/tether.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/vue_2.3.3.js"></script>
+  <script src="static/js/app.js"></script>
+
+</body>
+
+</html>
