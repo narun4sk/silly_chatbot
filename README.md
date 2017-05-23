@@ -23,7 +23,6 @@ Please edit `silly_chatbot/rtmbot/app/rtmbot.conf` and modify `SLACK_TOKEN` para
 
 ```
 rtmbot_1  | AttributeError: 'NoneType' object has no attribute 'recv'
-
 ```
 
 ---
