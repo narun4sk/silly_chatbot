@@ -7,8 +7,8 @@ Prerequisites: [docker-ce](https://docs.docker.com/engine/installation/), [docke
 To start all the components together please type the following commands:
 
 ```
-cd silly_chatbot
-docker-compose up --build
+$ cd silly_chatbot
+$ docker-compose up --build
 ```
 
 Give it a minute to initialise and download its corpus files, then to see local `webui` navigate your browser to:
@@ -30,9 +30,9 @@ rtmbot_1  | AttributeError: 'NoneType' object has no attribute 'recv'
 If instead you prefer to play with each of the component separately, then please `cd` into the appropriate directory and run `build.sh` or `run.sh` respectively. For instance to build and run the local `webui` do the following:
 
 ```
-cd silly_chatbot/webui
-./build.sh
-./run.sh
+$ cd silly_chatbot/webui
+$ ./build.sh
+$ ./run.sh
 ```
 ---
 
@@ -55,11 +55,11 @@ To see Bot list:
 To run `unit-tests` please init virtual environment and install global requirements, then `cd` into the `app` directory and run `pytest -q`. Example:
 
 ```
-cd silly_chatbot
-virtualenv -p python3 env
-pip install -r requirements.txt
-cd rtmbot/app
-pytest -q
+$ cd silly_chatbot
+$ virtualenv -p python3 env
+$ pip install -r requirements.txt
+$ cd rtmbot/app
+$ pytest -q
 ......
 6 passed in 0.25 seconds
 ```
