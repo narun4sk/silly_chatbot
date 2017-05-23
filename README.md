@@ -49,3 +49,17 @@ To see Bot list:
 ```
 @tellme list
 ```
+
+---
+
+To run `unit-tests` please init virtual environment and install global requirements, then `cd` into the `app` directory and run `pytest -q`. Example:
+
+```
+cd silly_chatbot
+virtualenv -p python3 env
+pip install -r requirements.txt
+cd rtmbot/app
+pytest -q
+......
+6 passed in 0.25 seconds
+```
