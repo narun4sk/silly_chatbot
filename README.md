@@ -24,6 +24,7 @@ cd silly_chatbot/webui
 ./build.sh
 ./run.sh
 ```
+---
 
 Please use `@tellme` prefix with all the input.
 
