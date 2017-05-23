@@ -11,6 +11,12 @@ cd silly_chatbot
 docker-compose up
 ```
 
+Give it a minute to initialise and download its corpus files, then to see local `webui` navigate your browser to:
+
+```
+http://127.0.0.1:8000
+````
+
 If instead you prefer to play with each of the component separately, then please `cd` into the appropriate directory and run `build.sh` or `run.sh` respectively. For instance to build and run the local `webui` do the following:
 
 ```
