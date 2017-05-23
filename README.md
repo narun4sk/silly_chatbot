@@ -8,7 +8,7 @@ To start all the components together please type the following commands:
 
 ```
 cd silly_chatbot
-docker-compose up
+docker-compose up --build
 ```
 
 Give it a minute to initialise and download its corpus files, then to see local `webui` navigate your browser to:
