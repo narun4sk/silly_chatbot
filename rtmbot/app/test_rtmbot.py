@@ -70,45 +70,53 @@ class TestRTMBot:
 
     def test_tellme(self):
         self.bot_trigger('')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert a[0] == '<BOT> Unknown command...'
+        self.Channel_mock.reset_mock()
 
         self.bot_trigger('@tellme')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert a[0] == '<BOT> Unknown command...'
+        self.Channel_mock.reset_mock()
 
     def test_tellme_help(self):
         self.bot_trigger('@tellme help')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert 'Please use' in a[0]
+        self.Channel_mock.reset_mock()
 
     def test_tellme_list(self):
         self.bot_trigger('@tellme list')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert 'Currently online' in a[0]
+        self.Channel_mock.reset_mock()
 
     def test_start_sess(self):
         self.bot_trigger('@tellme start_session')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert 'forgotten to specify Bot name' in a[0]
+        self.Channel_mock.reset_mock()
 
         self.bot_trigger('@tellme start_session unknown_bot')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert '"unknown_bot"' in a[0]
+        self.Channel_mock.reset_mock()
 
         self.bot_trigger('@tellme start_session Agent Smith')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert 'BOT@Agent Smith' in a[0]
+        self.Channel_mock.reset_mock()
 
     def test_end_sess(self):
         self.bot_trigger('@tellme end_session')
-        self.Channel_mock.send_message.assert_called()
+        assert self.Channel_mock.send_message.called
         a, kw = self.Channel_mock.send_message.call_args
         assert 'Session ended' in a[0]
+        self.Channel_mock.reset_mock()
