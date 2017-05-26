@@ -52,7 +52,7 @@ To see Bot list:
 
 ---
 
-To run `unit-tests` please init virtual environment and install global requirements, then `cd` into the `app` directory and run `pytest -q`. Example:
+To run `unit-tests` please init virtual environment and install global requirements to it, then `cd` into the `app` directory and run `pytest -q`. Example:
 
 ```
 $ cd silly_chatbot
