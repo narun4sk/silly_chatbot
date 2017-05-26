@@ -57,6 +57,7 @@ To run `unit-tests` please init virtual environment and install global requireme
 ```
 $ cd silly_chatbot
 $ virtualenv -p python3 env
+$ source env/bin/activate
 $ pip install -r requirements.txt
 $ cd rtmbot/app
 $ pytest -q
