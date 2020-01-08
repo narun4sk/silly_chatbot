@@ -1,6 +1,6 @@
 chatterbot==0.6.0
 bottle==0.12.13
-waitress==1.0.2
+waitress==1.4.2
 rtmbot==0.4.0
 websocket-client==0.40.0
 webtest==2.0.27
